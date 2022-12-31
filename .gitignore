@@ -1,2 +1,3 @@
 .vscode
+.env
 API-server/node_modules
