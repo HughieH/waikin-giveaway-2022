@@ -14,7 +14,7 @@ const app = express();
 
 
 // app.use() includes middleware functions
-app.use("/examples", defaultRoutes); // 1st param: starting path, 2nd param: Routes
+app.use("/giveaway", defaultRoutes); // 1st param: starting path, 2nd param: Routes
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
