@@ -1,4 +1,6 @@
 import React from "react";
+import { useSelector } from "react-redux";
+
 import Participant from "./Participant/participant.js";
 
 // Styles
@@ -8,6 +10,7 @@ import useStyles from "./styles.js"
 const Participants = () => {
     
     const classes = useStyles();
+    const participants = useSelector((state) => state.participants);
     
     return (
         <> {/* React Fragment */}

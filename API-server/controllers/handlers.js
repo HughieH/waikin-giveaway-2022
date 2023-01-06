@@ -12,6 +12,18 @@ export const getParticipants = async (req, res) => {
     }
 }
 
-export const insertParticipant = (req, res) => {
-    res.send("test")
+export const insertParticipant = async (req, res) => {
+    
+    const participant = req.body;
+    console.log(req.body)
+    const newParticipant = new Participants(participant);
+    
+    try {
+        await newParticipant.save();
+        res.status(201).json(newParticipant);
+        console.log("create success")
+    } catch (error) {
+        res.send(error);
+        console.log(error);
+    }
 }

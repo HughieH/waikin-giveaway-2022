@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { Container, AppBar, Typography, Grow, Grid} from "@material-ui/core"; // component library
 import { useDispatch } from "react-redux"; // allows us to dispatch a redux action
 
+import { getParticipants } from "./actions/participants.js";
+
 // Custom components
 import Participants from "./Components/Participants/participants.js"
 import Form from "./Components/Form/form.js"
@@ -17,8 +19,8 @@ const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch();
-    }, []);
+        dispatch(getParticipants());
+    }, [dispatch]);
 
     return (
         <Container maxWidth="lg">
