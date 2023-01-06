@@ -10,6 +10,7 @@ const participantSchema = mongoose.Schema({
     }
 })
 
-const ParticipantModel = mongoose.model('ParticipantModel', participantSchema);
+// export Mongoose medal based on participant schema, can execute MongoDB queries on this model
+const Participants = mongoose.model('Participants', participantSchema);
 
-export default ParticipantModel;
+export default Participants;
