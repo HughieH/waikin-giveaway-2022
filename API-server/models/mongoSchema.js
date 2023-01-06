@@ -10,7 +10,11 @@ const participantSchema = mongoose.Schema({
     }
 })
 
-// export Mongoose medal based on participant schema, can execute MongoDB queries on this model
-const Participants = mongoose.model('Participants', participantSchema);
+const winnerSchema = mongoose.Schema({
+    discordID: String
+})
 
-export default Participants;
+// export Mongoose medal based on participant schema, can execute MongoDB queries on this model
+export const Participants = mongoose.model('Participants', participantSchema);
+export const Winners = mongoose.model('Winners', winnerSchema);
+

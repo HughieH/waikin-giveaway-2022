@@ -15,11 +15,31 @@ export const getParticipants = () => async(dispatch) => {
     }
 }
 
+export const getWinners = () => async(dispatch) => {
+    
+    try {
+        const { data } = await api.fetchWinners();
+        dispatch({ type: "FETCH_ALL", payload: data }) // instead of returning, we "dispatch" the action
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const createParticipant = (participant) => async(dispatch) => {
 
     try {
         const { data } = await api.createParticipant(participant)
         dispatch({ type: "CREATE", payload: data })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const removeParticipant = (id) => async(dispatch) => {
+
+    try {
+        await api.removeParticipant(id);
+        dispatch( {type: "DELETE", payload: id})
     } catch (error) {
         console.log(error)
     }

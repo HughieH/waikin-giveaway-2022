@@ -6,6 +6,7 @@ import { getParticipants } from "./actions/participants.js";
 
 // Custom components
 import Participants from "./Components/Participants/participants.js"
+import Winners from "./Components/Winners/winners.js"
 import Form from "./Components/Form/form.js"
 
 // Styles
@@ -13,6 +14,7 @@ import useStyles from "./styles.js"
 
 // Images
 import ayaya from "./images/AYAYA.png"
+import { fetchWinners } from "./api/index.js";
 
 const App = () => {
     const classes = useStyles();
@@ -20,6 +22,10 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getParticipants());
+    }, [dispatch]);
+
+    useEffect(() => {
+        dispatch(fetchWinners());
     }, [dispatch]);
 
     return (
@@ -41,6 +47,9 @@ const App = () => {
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <Form />
+                        </Grid>
+                        <Grid item xs={12} sm={7}>
+                            <Winners />
                         </Grid>
                     </Grid>
                 </Container>
