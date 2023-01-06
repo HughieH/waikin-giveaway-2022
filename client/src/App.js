@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, AppBar, Typography, Grow, Grid} from "@material-ui/core"; // component library
+import { useDispatch } from "react-redux"; // allows us to dispatch a redux action
 
 // Custom components
 import Participants from "./Components/Participants/participants.js"
@@ -13,6 +14,12 @@ import ayaya from "./images/AYAYA.png"
 
 const App = () => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch();
+    }, []);
+
     return (
         <Container maxWidth="lg">
             {/* Main appbar component */}
