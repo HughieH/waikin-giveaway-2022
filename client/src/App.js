@@ -20,13 +20,11 @@ const App = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
+    // insert multiple fetch request here for winners and participants
     useEffect(() => {
         dispatch(getParticipants());
     }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(fetchWinners());
-    }, [dispatch]);
 
     return (
         <Container maxWidth="lg">
@@ -48,9 +46,7 @@ const App = () => {
                         <Grid item xs={12} sm={4}>
                             <Form />
                         </Grid>
-                        <Grid item xs={12} sm={7}>
-                            <Winners />
-                        </Grid>
+                        
                     </Grid>
                 </Container>
             </Grow>

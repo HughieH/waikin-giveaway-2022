@@ -11,6 +11,6 @@ router.get('/', getParticipants);
 router.post('/', insertParticipant);
 router.delete('/:id', removeParticipant);
 router.get('/winners', getWinners)
-router.post('/pickWinner', pickWinner)
+router.get('/pickWinner', pickWinner)
 
 export default router;
