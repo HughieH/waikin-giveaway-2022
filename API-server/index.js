@@ -19,8 +19,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use("/giveaway", defaultRoutes); // 1st param: starting path, 2nd param: Routes
 
-console.log(`${process.env.MONGO_USER}:${process.env.MONGO_PW}`)
-
 const MONGO_CONNECTION = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.okq9tb4.mongodb.net/?retryWrites=true&w=majority`;
 const PORT = process.env.PORT || 5000;
 
