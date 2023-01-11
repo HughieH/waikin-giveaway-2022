@@ -4,19 +4,20 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 
-import { removeParticipant } from '../../../actions/participants.js';
+//import { removeParticipant } from '../../../redux/actions/participants.js';
 
 // Styles
 import useStyles from "./styles.js"
 
 // Images & Gifs
-import waikinDab from "../../../images/waikinDab.gif"
-import waikinHype from "../../../images/waikinHype.gif"
+import waikinDab from "../../../../images/waikinDab.gif"
+import waikinHype from "../../../../images/waikinHype.gif"
 
 const WinGifs = [waikinDab, waikinHype]
 // functional component
 const Winner = ({ winner }) => {
     
+    console.log("winner card")
     const dispatch = useDispatch();
     const classes = useStyles();
     const winImg = WinGifs[Math.floor(Math.random() * 2)] // pick random gif/image from array

@@ -19,11 +19,11 @@ const Winners = () => {
     return (
         // If there are no participants, display loading circle
         !winners.length ? <CircularProgress /> : (
-            <Grid className={classes.container} container alignItems="stretch" spacing={3}>
-                {/* Map the participants, variable length. LOOP OVER THEM */}
+            <Grid className={classes.container} container alignItems="stretch" spacing={2}>
+                {/* Map the winners, variable length. LOOP OVER THEM */}
                 
                 {winners.map((winner) => (
-                    <Grid key={winner._id} item xs={12} sm={6} md={6}>
+                    <Grid key={winner._id} item xs={12} sm={12} md={6}>
                         <Winner winner={winner} />
                     </Grid>
                 ))}

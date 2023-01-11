@@ -3,18 +3,14 @@ import ReactDOM from 'react-dom';
 
 // Redux state management stuff
 import { Provider } from "react-redux"; // allows access to global store
-import { createStore, applyMiddleware, compose } from "redux"; // using deprecated createStore
-import thunk from "redux-thunk";
+import { store } from "./redux/store";
 
-import reducers from "./reducers";
+
 import "./index.css"
 
 import App from './App';
 
-const store = createStore(
-    reducers,
-    compose(applyMiddleware(thunk))
-)
+//console.log(store.getState())
 
 ReactDOM.render(
     <Provider store={store}>

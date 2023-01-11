@@ -10,10 +10,18 @@ export default makeStyles(() => ({
         justifyContent: 'center',
         alignItems: 'center',
       },
-      heading: {
-        color: 'rgba(0,183,255, 1)',
-      },
-      image: {
-        marginLeft: '15px',
-      },
+    heading: {
+      color: 'rgba(0,183,255, 1)',
+    },
+    image: {
+      marginLeft: '15px',
+    },
+    appParticipants: {
+      borderRadius: 15,
+      margin: '0 0 20px 0',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
 }))

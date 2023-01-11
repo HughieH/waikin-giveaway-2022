@@ -11,7 +11,7 @@ export default makeStyles({
     border: 'solid',
   },
   fullHeightCard: {
-    height: '100%',
+    height: '50%',
   },
   card: {
     display: 'flex',
@@ -19,27 +19,19 @@ export default makeStyles({
     justifyContent: 'space-between',
     borderRadius: '15px',
     height: '100%',
+    textAlign: 'center',
     position: 'relative',
   },
   overlay: {
     position: 'absolute',
-    top: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    top: '10px',
     left: '20px',
-    color: 'white',
-  },
-  overlay2: {
-    position: 'absolute',
-    top: '20px',
-    right: '20px',
     color: 'white',
   },
   grid: {
     display: 'flex',
-  },
-  details: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    margin: '20px',
   },
   title: {
     padding: '0 16px',
@@ -49,4 +41,5 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  
 });

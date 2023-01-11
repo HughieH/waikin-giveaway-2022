@@ -4,6 +4,6 @@ import participants from "./participants.js";
 import winners from "./winners.js"
 
 export default combineReducers({
-    participants,
-    winners
+    participants: participants,
+    winners: winners
 })
