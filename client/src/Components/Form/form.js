@@ -12,7 +12,7 @@ import Winners from "./Winners/winners";
 const Form = () => {
     
     const classes = useStyles();
-    const [participantData, setParticipantData] = useState({ discordID: "" });
+    const [participant, setParticipant] = useState({ discordID: '' });
     const dispatch = useDispatch();
 
     const winners = useSelector((state) => state.winners);
@@ -20,8 +20,10 @@ const Form = () => {
     // event handler? "e" is a synthetic event
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(participantData)
-        dispatch(createParticipant(participantData))
+        console.log(participant);
+        dispatch(createParticipant(participant));
+        setParticipant({ discordID: '' })
+
     }
 
     const handleWinner = (e) => {
@@ -40,10 +42,14 @@ const Form = () => {
                     variant="outlined"
                     label="discordID"
                     fullWidth
-                    value={participantData.discordID}
-                    onChange={(e) => setParticipantData({...participantData, discordID: e.target.value})} // uses e as event
+                    value={participant.discordID}
+                    onChange={(e) => {
+                        console.log(e.target.value)
+                        setParticipant({discordID: e.target.value })
+                    }} // uses e as event
                 />
-                <Button className={classes.button} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                <Button disabled={!participant.discordID} className={classes.button} variant="contained" color="primary" size="large" type="submit" fullWidth>Submit</Button>
+                
                 <Typography variant="h6"> <b> Find a random winner! </b> </Typography>
                 <Button className={classes.button} variant="contained" color="secondary" size="large" onClick={handleWinner} fullWidth>New Winner!</Button>
             </form>
