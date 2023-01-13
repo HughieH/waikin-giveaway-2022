@@ -12,6 +12,7 @@ const Winners = () => {
     
     const classes = useStyles();
     const winners = useSelector((state) => state.winners);
+    
 
     console.log(winners)
     

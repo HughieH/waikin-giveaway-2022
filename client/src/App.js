@@ -24,9 +24,6 @@ const App = () => {
     // function will execute every time our application gets rendered, like when pressing buttons
     useEffect(() => {
         dispatch(getParticipants());
-    }, [dispatch]);
-
-    useEffect(() => {
         dispatch(getWinners());
     }, [dispatch]);
 

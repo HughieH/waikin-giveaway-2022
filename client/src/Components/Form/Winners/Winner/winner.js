@@ -4,7 +4,7 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 
-//import { removeParticipant } from '../../../redux/actions/participants.js';
+import { removeWinner } from "../../../../redux/actions/actions.js"
 
 // Styles
 import useStyles from "./styles.js"
@@ -28,6 +28,9 @@ const Winner = ({ winner }) => {
             <div className={classes.overlay}>
                 <Typography variant="h6">{winner.discordID}</Typography>
             </div>
+            <CardActions className={classes.cardActions}>
+                <Button size="small" color="primary" onClick={() => dispatch(removeWinner(winner._id))}><DeleteIcon fontSize="small" />Delete</Button>
+            </CardActions>
         </Card>
     )
 }

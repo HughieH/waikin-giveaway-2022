@@ -48,8 +48,18 @@ export const removeParticipant = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
 
     await Participants.findByIdAndRemove(id);
-
+    console.log(`${id} removed success!`);
     res.json({ message: "Post deleted successfully." });
+}
+
+export const removeWinner = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
+
+    await Winners.findByIdAndRemove(id);
+    console.log(`${id} removed success!`);
+    res.json({ message: "Winner deleted successfully." });
 }
 
 export const pickWinner = async (req, res) => {

@@ -59,3 +59,12 @@ export const pickWinner = () => async(dispatch) => {
     }
 }
 
+export const removeWinner = (id) => async(dispatch) => {
+
+    try {
+        await api.removeWinner(id);
+        dispatch( {type: "DELETE_WINNER", payload: id})
+    } catch (error) {
+        console.log(error)
+    }
+}

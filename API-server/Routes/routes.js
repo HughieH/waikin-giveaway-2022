@@ -1,7 +1,7 @@
 // Request Routes
 
 import express from "express";
-import { getParticipants, insertParticipant, removeParticipant, getWinners, pickWinner } from "../controllers/handlers.js";
+import { getParticipants, insertParticipant, removeParticipant, getWinners, pickWinner, removeWinner } from "../controllers/handlers.js";
 
 const router = express.Router();
 
@@ -10,7 +10,9 @@ const router = express.Router();
 router.get('/', getParticipants);
 router.post('/', insertParticipant);
 router.delete('/:id', removeParticipant);
+
 router.get('/winners', getWinners)
 router.get('/pickWinner', pickWinner)
+router.delete('/deleteWinner/:id', removeWinner);
 
 export default router;

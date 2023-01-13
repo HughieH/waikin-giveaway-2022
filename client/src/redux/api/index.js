@@ -10,3 +10,4 @@ export const removeParticipant = (id) => axios.delete(`${url}/${id}`);
 // Winners
 export const fetchWinners = () => axios.get(`${url}/winners`);
 export const pickWinner = () => axios.get(`${url}/pickWinner`)
+export const removeWinner = (id) => axios.delete(`${url}/deleteWinner/${id}`);
